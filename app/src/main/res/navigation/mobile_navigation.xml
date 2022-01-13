@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.proapp.ui.home.HomeFragment"
+        android:label="Jobs"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_job_details"
+            app:destination="@id/jobDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.proapp.ui.dashboard.DashboardFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.proapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.proapp.AccountFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/jobDetailsFragment"
+        android:name="com.example.proapp.JobDetailsFragment"
+        android:label="Job details"
+        tools:layout="@layout/fragment_job_details" />
+
+
+</navigation>

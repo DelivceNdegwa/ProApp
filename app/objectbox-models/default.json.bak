@@ -1,0 +1,111 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:919601296690447336",
+      "lastPropertyId": "5:1370109330027903063",
+      "name": "Profession",
+      "properties": [
+        {
+          "id": "1:3998961742659550097",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "2:3553966405607558970",
+          "name": "icon",
+          "type": 9
+        },
+        {
+          "id": "3:3407448915186199103",
+          "name": "created_at",
+          "type": 9
+        },
+        {
+          "id": "4:1391125334113441777",
+          "name": "views",
+          "type": 5
+        },
+        {
+          "id": "5:1370109330027903063",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:2858173526336798889",
+      "lastPropertyId": "10:3456032299771012268",
+      "name": "Job",
+      "properties": [
+        {
+          "id": "1:8184480349851807327",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "2:7723307459214360132",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "3:5369864770822148929",
+          "name": "expiry_date",
+          "type": 9
+        },
+        {
+          "id": "4:3495060426241738798",
+          "name": "attachment",
+          "type": 9
+        },
+        {
+          "id": "5:4717606861608216312",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "6:347297843722993631",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "7:6349252749760864675",
+          "name": "number",
+          "type": 9
+        },
+        {
+          "id": "8:7688205471599174650",
+          "name": "profession",
+          "type": 6
+        },
+        {
+          "id": "9:8437668029472899287",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "10:3456032299771012268",
+          "name": "time_of_day",
+          "type": 5
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:2858173526336798889",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

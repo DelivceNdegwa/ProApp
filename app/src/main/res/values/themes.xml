@@ -1,0 +1,116 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lyanne</item>
+        <item name="colorPrimaryVariant">@color/dark_lyanne</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/lyanne</item>
+        <item name="colorSecondaryVariant">@color/bg_color</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="layoutBackground">
+        <item name="android:background">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="specialText" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.ProApp.NoActionBar" parent="Theme.ProApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!-- <item name="android:windowFullscreen">true</item> -->
+
+    <style name="buttonStyling" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="buttonAlignment">
+        <item name="android:height">60dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+    </style>
+
+    <style name="buttonAlligmentStyled" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:height">60dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+    </style>
+
+    <style name="stylingIcons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:tint">@color/lyanne</item>
+    </style>
+    <style name="stylingCardIcons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90dp</item>
+
+    </style>
+
+    <style name="cardStylingHome">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="cardStylingBordered">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="cardCornerRadius">12dp</item>
+    </style>
+
+    <style name="inputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+
+    </style>
+
+    <style name="Theme.ProApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ProApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!--
+                          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:padding="10dp"
+
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"-->
+</resources>
