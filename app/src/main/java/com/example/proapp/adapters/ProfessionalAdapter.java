@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.proapp.ProDetailsActivity;
 import com.example.proapp.R;
 import com.example.proapp.models.Professional;
@@ -42,6 +43,8 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
         Professional professional = professionals.get(position);
         holder.txtName.setText(professional.getName());
         holder.txtOccupation.setText(professional.getOccupation());
+        Glide.with(context).load(professional.getImage()).into(holder.imgPro);
+        holder.phoneNumber = professional.getPhone_number();
     }
 
     @Override
@@ -54,6 +57,7 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
         TextView txtName, txtOccupation;
         Button btnContact;
         ImageView imgPro;
+        String phoneNumber;
         long id;
 
         public ViewHolder(@NonNull View itemView) {
@@ -83,7 +87,7 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_DIAL);
-                    intent.setData(Uri.parse("tel:0798116374"));
+                    intent.setData(Uri.parse("tel:"+phoneNumber));
                     context.startActivity(intent);
                 }
             });

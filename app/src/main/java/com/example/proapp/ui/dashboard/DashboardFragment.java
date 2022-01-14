@@ -85,7 +85,6 @@ public class DashboardFragment extends Fragment {
         hiresRecyclerView.setNestedScrollingEnabled(true);
         hiresRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        professionals.add(new Professional("Jemmy", "gemjemmy@gmail.com", "Finance Expert", "0798116374"));
         professionalAdapter = new ProfessionalAdapter(getActivity(), professionals);
         hiresRecyclerView.setAdapter(professionalAdapter);
 
@@ -184,7 +183,7 @@ public class DashboardFragment extends Fragment {
             public void onResponse(Call<List<ProfessionalResponse>> call, Response<List<ProfessionalResponse>> response) {
                 if(response.code()==200 && response.body() != null){
                     professionals.clear();
-                    for(int i=0; i<=response.body().size(); i++){
+                    for(int i=0; i<response.body().size(); i++){
                         ProfessionalResponse professionalResponse = response.body().get(i);
                         professionals.add(new Professional(
                                 professionalResponse.getFirstName(),
@@ -194,6 +193,7 @@ public class DashboardFragment extends Fragment {
                                 professionalResponse.getImage()
                         ));
                     }
+                    professionalAdapter.notifyDataSetChanged();
                 }
                 else{
                     Toast.makeText(requireActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
