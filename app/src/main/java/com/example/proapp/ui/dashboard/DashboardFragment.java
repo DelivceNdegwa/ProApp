@@ -84,7 +84,7 @@ public class DashboardFragment extends Fragment {
         hiresRecyclerView.setNestedScrollingEnabled(true);
         hiresRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        professionals.add(new Professional("Jemmy", "gemjemmy@gmail.com", "Finance Expert", "0798116374"));
         professionalAdapter = new ProfessionalAdapter(getActivity(), professionals);
         hiresRecyclerView.setAdapter(professionalAdapter);
 
