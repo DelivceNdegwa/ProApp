@@ -27,7 +27,7 @@ public class ProfessionalResponse {
     private String description;
     @SerializedName("image")
     @Expose
-    private Object image;
+    private String image;
     @SerializedName("price_per_hour")
     @Expose
     private Double pricePerHour;
@@ -91,11 +91,11 @@ public class ProfessionalResponse {
         this.description = description;
     }
 
-    public Object getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Object image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

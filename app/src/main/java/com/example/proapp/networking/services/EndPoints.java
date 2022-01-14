@@ -21,7 +21,7 @@ public interface EndPoints {
     Call<ProfessionResponse> getProfessionData(@Path("id") int id);
 
     @GET("/professionals")
-    Call<ProfessionalResponse> getProfessionals();
+    Call<List<ProfessionalResponse>> getProfessionals();
 
     @GET("/professionals/{id}")
     Call<ProfessionalResponse> getProfessionalData(@Path("id") int id);

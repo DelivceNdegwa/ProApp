@@ -24,6 +24,7 @@ import com.example.proapp.databinding.FragmentDashboardBinding;
 import com.example.proapp.models.Profession;
 import com.example.proapp.models.Professional;
 import com.example.proapp.networking.pojos.ProfessionResponse;
+import com.example.proapp.networking.pojos.ProfessionalResponse;
 import com.example.proapp.networking.pojos.TestResponse;
 import com.example.proapp.networking.services.ServiceGenerator;
 import com.example.proapp.ui.home.HomeViewModel;
@@ -111,6 +112,7 @@ public class DashboardFragment extends Fragment {
 //        });
 //        getCloudComments();
         getProfessions();
+        getProfessionals();
     }
 
     private void getCloudComments() {
@@ -170,6 +172,38 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onFailure(Call<List<ProfessionResponse>> call, Throwable t) {
                 Toast.makeText(requireActivity(), "Check your connection and try again", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getProfessionals(){
+        Call<List<ProfessionalResponse>> call = ServiceGenerator.getInstance().getApiConnector().getProfessionals();
+
+        call.enqueue(new Callback<List<ProfessionalResponse>>() {
+            @Override
+            public void onResponse(Call<List<ProfessionalResponse>> call, Response<List<ProfessionalResponse>> response) {
+                if(response.code()==200 && response.body() != null){
+                    professionals.clear();
+                    for(int i=0; i<=response.body().size(); i++){
+                        ProfessionalResponse professionalResponse = response.body().get(i);
+                        professionals.add(new Professional(
+                                professionalResponse.getFirstName(),
+                                professionalResponse.getEmail(),
+                                professionalResponse.getDescription(),
+                                professionalResponse.getPhoneNumber(),
+                                professionalResponse.getImage()
+                        ));
+                    }
+                }
+                else{
+                    Toast.makeText(requireActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                    Log.d("onResponseElse", "CODE="+response.code()+" BODY="+response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ProfessionalResponse>> call, Throwable t) {
+                Toast.makeText(requireActivity(), "Server not responding, check your connection", Toast.LENGTH_SHORT).show();
             }
         });
     }

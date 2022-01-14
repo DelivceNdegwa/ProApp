@@ -16,6 +16,14 @@ public class Professional {
         this.phone_number = phone_number;
     }
 
+    public Professional(String name, String email, String occupation, String phone_number, String image) {
+        this.name = name;
+        this.email = email;
+        this.occupation = occupation;
+        this.phone_number = phone_number;
+        this.image = image;
+    }
+
     public String getName() {
         return name;
     }
