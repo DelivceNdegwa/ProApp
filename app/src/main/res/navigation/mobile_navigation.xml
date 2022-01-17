@@ -36,6 +36,11 @@
         android:name="com.example.proapp.JobDetailsFragment"
         android:label="Job details"
         tools:layout="@layout/fragment_job_details" />
+    <fragment
+        android:id="@+id/proDetailsFragment"
+        android:name="com.example.proapp.ProDetailsFragment"
+        android:label="fragment_pro_details"
+        tools:layout="@layout/fragment_pro_details" />
 
 
 </navigation>

@@ -4,6 +4,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class ProfessionalResponse {
+    @SerializedName("id")
+    @Expose
+    private int id;
     @SerializedName("username")
     @Expose
     private String username;
@@ -115,4 +118,11 @@ public class ProfessionalResponse {
         this.occupation = occupation;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

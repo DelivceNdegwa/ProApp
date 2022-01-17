@@ -2,7 +2,7 @@ package com.example.proapp.models;
 
 public class Professional {
     String name, email, password, occupation, description, skills, image, phone_number;
-    int  working_hours, price_per_hour;
+    int  working_hours, price_per_hour, id;
     float rating;
 
     public Professional() {
@@ -16,7 +16,8 @@ public class Professional {
         this.phone_number = phone_number;
     }
 
-    public Professional(String name, String email, String occupation, String phone_number, String image) {
+    public Professional(int id, String name, String email, String occupation, String phone_number, String image) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.occupation = occupation;
@@ -109,5 +110,11 @@ public class Professional {
 
     public void setOccupation(String occupation) { this.occupation = occupation;}
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }

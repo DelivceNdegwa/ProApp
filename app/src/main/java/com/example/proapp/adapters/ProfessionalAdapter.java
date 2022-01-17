@@ -3,6 +3,7 @@ package com.example.proapp.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.proapp.ProDetailsActivity;
 import com.example.proapp.R;
 import com.example.proapp.models.Professional;
 
@@ -43,8 +44,9 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
         Professional professional = professionals.get(position);
         holder.txtName.setText(professional.getName());
         holder.txtOccupation.setText(professional.getOccupation());
-        Glide.with(context).load(professional.getImage()).into(holder.imgPro);
+        Glide.with(context).load(professional.getImage()).placeholder(R.drawable.ambassador).into(holder.imgPro);
         holder.phoneNumber = professional.getPhone_number();
+        holder.id = professional.getId();
     }
 
     @Override
@@ -58,7 +60,7 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
         Button btnContact;
         ImageView imgPro;
         String phoneNumber;
-        long id;
+        int id;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,15 +73,9 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    int position = getAdapterPosition();
-                    String name = professionals.get(position).getName();
-                    String occupation = professionals.get(position).getOccupation();
-
-                    Intent intent = new Intent(context, ProDetailsActivity.class);
-                    intent.putExtra("NAME", name);
-//                    intent.putExtra("OCCUPATION", occupation);
-                    context.startActivity(intent);
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("ID", id);
+                    Navigation.findNavController(view).navigate(R.id.proDetailsFragment, bundle);
                 }
             });
 
@@ -89,6 +85,9 @@ public class ProfessionalAdapter extends RecyclerView.Adapter<ProfessionalAdapte
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(Uri.parse("tel:"+phoneNumber));
                     context.startActivity(intent);
+
+
+
                 }
             });
         }
